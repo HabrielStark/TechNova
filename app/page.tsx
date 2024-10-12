@@ -1,13 +1,13 @@
-'use client'
+&#39;use client&#39;
 
-import { useEffect, useRef } from 'react'
-import * as THREE from 'three'
-import { HomePage } from "@/components/home-page"
+import { useEffect, useRef } from &#39;react&#39;
+import * as THREE from &#39;three&#39;
+import { HomePage } from &quot;@/components/home-page&quot;
 
 export default function Page() {
-  const heroRef = useRef<HTMLDivElement>(null)
+  const heroRef = useRef&lt;HTMLDivElement&gt;(null)
 
-  useEffect(() => {
+  useEffect(() =&gt; {
     const renderer = new THREE.WebGLRenderer({ alpha: true })
     renderer.setSize(window.innerWidth, window.innerHeight)
     
@@ -24,7 +24,7 @@ export default function Page() {
       const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000)
       camera.position.z = 30
       
-      const animate = () => {
+      const animate = () =&gt; {
         requestAnimationFrame(animate)
         torusKnot.rotation.x += 0.01
         torusKnot.rotation.y += 0.01
@@ -32,7 +32,7 @@ export default function Page() {
       }
       animate()
 
-    return () => {
+    return () =&gt; {
       if (heroRef.current) {
         heroRef.current.removeChild(renderer.domElement)
       }
@@ -41,9 +41,9 @@ export default function Page() {
 }, [])
 
   return (
-    <div>
-      <div ref={heroRef} style={{ position: 'fixed', top: 0, left: 0, zIndex: -1 }} />
-      <HomePage />
-    </div>
+    &lt;div&gt;
+      &lt;div ref={heroRef} style={{ position: &#39;fixed&#39;, top: 0, left: 0, zIndex: -1 }} /&gt;
+      &lt;HomePage /&gt;
+    &lt;/div&gt;
   )
 }
