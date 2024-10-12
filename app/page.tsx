@@ -1,4 +1,4 @@
-
+&#39;use client&#39;
 
 import { useEffect, useRef } from &#39;react&#39;
 import * as THREE from &#39;three&#39;
